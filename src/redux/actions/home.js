@@ -10,6 +10,12 @@ export const getList =()=>(dispatch,getState)=>{
         })
     });
 };
+export const setLesson=(lesson)=>{
+    return {
+        type:Types.SET_CURRENT_LESSON,
+        lesson
+    }
+}
 export const getLesson =()=>(dispatch,getState)=>{
     getLessons(url+'/api/getLessons').then(lessons=>{
         dispatch({

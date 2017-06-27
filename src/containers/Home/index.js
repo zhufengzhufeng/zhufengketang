@@ -15,14 +15,19 @@ export default class Home extends Component{
     constructor(){
         super();
     }
+    chooseHandler(val){
+       this.props.setLesson(val);
+    }
     render(){
         return (
+            <div style={{height:'100%'}}>
+                <HomeHeader chooseLesson={this.chooseHandler.bind(this)}/>
+                <div className="home wrap-page">
 
-            <div className="home wrap-page">
-                <HomeHeader/>
-                {this.props.sliders.length>0?<Swiper sliders={this.props.sliders}/>:''}
-                <h3><i className="iconfont icon-book"></i>全部課程</h3>
-                <LessonList lists={this.props.lessons}/>
+                    {this.props.sliders.length>0?<Swiper sliders={this.props.sliders}/>:''}
+                    <h3><i className="iconfont icon-book"></i>全部課程</h3>
+                    <LessonList lists={this.props.lessons}/>
+                </div>
             </div>
         )
     }

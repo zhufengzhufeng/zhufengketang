@@ -1,5 +1,6 @@
 import * as Types from '../action-types/home';
 let initState = {
+    currentLesson:'',
     sliders:[],
     lessons:[]
 }
@@ -11,6 +12,9 @@ export function home(state=initState,action) {
         case Types.GET_LESSON:
             state.lessons = action.lessons;
             return {...state};
+        case Types.SET_CURRENT_LESSON:
+            state.currentLesson = action.lesson;
+            return {...state}
     }
     return state;
 }

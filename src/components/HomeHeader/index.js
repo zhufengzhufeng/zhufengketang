@@ -15,6 +15,10 @@ export default class HomeHeader extends Component{
             isShow:!this.state.isShow
         })
     }
+    choose(e){
+        this.props.chooseLesson(e.target.innerText);
+        this.changeShow();
+    }
     render(){
         return (
             <div className="header">
@@ -34,9 +38,7 @@ export default class HomeHeader extends Component{
                     transitionLeaveTimeout={300}>
                     {!this.state.isShow
                         ?
-                        <nav className="header-list" onClick={()=>{
-                        }
-                        }>
+                        <nav className="header-list" onClick={this.choose.bind(this)}>
                             <li>Node課程培訓</li>
                             <li>HTML5培訓課程</li>
                             <li>視頻教程</li>

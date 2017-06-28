@@ -3,7 +3,7 @@ import reducers from '../reducers';
 
 
 //创建路由中间件
-import createHistory from 'history/createBrowserHistory';
+import createHistory from 'history/createHashHistory';
 const history = createHistory();
 import {routerMiddleware} from 'react-router-redux'
 const rMiddleware = routerMiddleware(history);

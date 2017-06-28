@@ -8,7 +8,7 @@ export default class LessonList extends Component{
                     this.props.lists.map((item,index)=>{
                         let {url,lesson,price} = item;
                         return (
-                            <div key={index}>
+                            <div key={index} className="lesson-list-item">
                                 <img src={url} alt=""/>
                                 <p>{lesson}</p>
                                 <strong>{price}</strong>

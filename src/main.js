@@ -7,6 +7,10 @@ import App from './containers/index';
 import Home from './containers/Home';
 //课程组件
 import Lesson from './containers/Lesson';
+//个人中心
+import Profile from './containers/Profile';
+//登录页面
+import Login from './containers/Login';
 
 //公共样式
 import './common/css/index.less';
@@ -21,6 +25,8 @@ import {ConnectedRouter} from 'react-router-redux'
 import createHistory from 'history/createHashHistory';
 const history = createHistory();
 
+import PrivateRoute from './Private'
+
 
 
 render(
@@ -29,7 +35,9 @@ render(
                 <App>
                     <Switch>
                         <Route path={'/home'} component={Home}/>
-                        <Route path={'/lesson'} component={Lesson}/>
+                        <PrivateRoute path={'/lesson'} component={Lesson}/>
+                        <Route path={'/profile'} component={Profile}/>
+                        <Route path={'/login'} component={Login}/>
                         <Redirect to="/home"/>
                     </Switch>
                 </App>

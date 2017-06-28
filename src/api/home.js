@@ -1,7 +1,8 @@
 import {get} from './index';
-export function getSliders(url) {
-    return get(url);
+let url = 'http://localhost:3000';
+export function getSliders() {
+    return get(url+'/api/getSliders');
 }
-export function getLessons(url) {
-    return get(url);
+export function getLessons(type,limit,offset) {
+    return get(url+'/api/getLessons/'+type+'/'+limit+'/'+offset);
 }
